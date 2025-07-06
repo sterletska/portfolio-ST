@@ -50,11 +50,10 @@
       </h2>
       <p class="fade-in-delay2">Explore my thought process through design.</p>
 
-      <!--Case Studies Button-->
+      <!--Case Studies Scroll Button-->
       <button
         class="case-studies-btn"
         :class="{ 'button-animated': animateButton }"
-        @click="$emit('scrollToCaseStudies')"
       >
         Case Studies <br /><span class="scroll">Scroll</span> <br /><img
           src="@/assets/down-arrow.gif"
@@ -134,7 +133,6 @@ export default {
   position: relative;
   max-width: 40vw;
   width: 100%;
-  flex: 1 1 300px;
 }
 
 .intro-video {
@@ -331,11 +329,14 @@ export default {
 }
 
 /* Responsive stacking on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .intro {
     flex-direction: column;
+    height: 100%;
   }
-
+  .intro-text {
+    height: 100%;
+  }
   .video-wrapper {
     max-width: 90vw;
   }
