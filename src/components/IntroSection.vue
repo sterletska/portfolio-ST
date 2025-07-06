@@ -337,7 +337,7 @@ export default {
   }
 
   .video-wrapper {
-    max-width: 50vw;
+    max-width: 90vw;
   }
 
   .intro-text {
