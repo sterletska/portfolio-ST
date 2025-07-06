@@ -1,42 +1,32 @@
 <template>
   <div class="layout-home">
-    <IntroSection @scrollToCaseStudies="scrollToCaseStudies"/>
+    <IntroSection />
     <div class="cases">
-        <!-- <ToggleSwitch /> -->
-        <CaseStudyCards />
+      <CaseStudyCards />
     </div>
-     </div>
-  </template>
+  </div>
+</template>
   
   <script>
-  import IntroSection from '@/components/IntroSection.vue'
-  /* import ToggleSwitch from '@/components/ToggleSwitch.vue' */
-  import CaseStudyCards from '@/components/CaseStudyCards.vue'
-  
-  export default {
-    name: 'HomeView',
-    components: {
-      IntroSection,
-      /* ToggleSwitch, */
-      CaseStudyCards
-    },
-    methods: {
-    scrollToCaseStudies() {
-      const el = document.getElementById('case-studies');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }
-  }
-  </script>
+import IntroSection from "@/components/IntroSection.vue";
+
+import CaseStudyCards from "@/components/CaseStudyCards.vue";
+
+export default {
+  name: "HomeView",
+  components: {
+    IntroSection,
+    CaseStudyCards,
+  },
+};
+</script>
 
   <style scoped>
-  .layout-home {
-    margin: 0;
-    padding: 0;
-  }
-  .cases {
-    background-color: #fff;
-  }
-  </style>
+.layout-home {
+  margin: 0;
+  padding: 0;
+}
+.cases {
+  background-color: #fff;
+}
+</style>
