@@ -13,10 +13,8 @@
         @play="updatePlayButton"
         @pause="updatePlayButton"
       >
-        <source
-          :src="`${process.env.BASE_URL}UXDesignerAtWork.mp4`"
-          type="video/mp4"
-        />
+        <!-- Use the computed property videoBaseUrl -->
+        <source :src="`${videoBaseUrl}UXDesignerAtWork.mp4`" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -56,6 +54,7 @@
       <button
         class="case-studies-btn"
         :class="{ 'button-animated': animateButton }"
+        @click="$emit('scrollToCaseStudies')"
       >
         Case Studies <br /><span class="scroll">Scroll</span> <br /><img
           src="@/assets/down-arrow.gif"
@@ -66,13 +65,17 @@
     </div>
   </section>
 </template>
-  
-  <script>
+
+<script>
 export default {
   name: "IntroSection",
   computed: {
     headingChars() {
       return "Welcome".split("");
+    },
+
+    videoBaseUrl() {
+      return process.env.BASE_URL || "/";
     },
   },
   data() {
