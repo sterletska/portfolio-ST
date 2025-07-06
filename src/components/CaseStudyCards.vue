@@ -480,7 +480,7 @@ export default {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .parallax-section {
-    height: 4vh;
+    height: 0vh;
   }
 
   .case-studies-section {
