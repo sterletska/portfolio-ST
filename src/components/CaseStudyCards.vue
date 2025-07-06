@@ -479,6 +479,10 @@ export default {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .parallax-section {
+    height: 4vh;
+  }
+
   .case-studies-section {
     padding: 60px 15px;
   }
