@@ -1,14 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainLayout from '@/layouts/MainLayout.vue'
-import HomeView from '@/views/HomeView.vue'
-import AboutView from '@/views/AboutView.vue'
-import GraphicsView from '@/views/GraphicsView.vue'
-import CaseStudyRabbitry from '@/views/CaseStudyRabbitry.vue'
-import CaseStudyBudgeting from '@/views/CaseStudyBudgeting.vue';
-import CaseStudyRealEstate from '@/views/CaseStudyRealEstate.vue';
-import CaseStudyVacation from '@/views/CaseStudyVacation.vue';
-import CaseStudyMedical from '@/views/CaseStudyMedical.vue';
-import CaseStudyCards from '@/components/CaseStudyCards.vue'
 
 const routes = [
     {
@@ -18,47 +9,56 @@ const routes = [
             {
                 path: '',
                 name: 'Home',
-                component: HomeView
+                // Lazy load HomeView component
+                component: () => import(/* webpackChunkName: "home" */ '@/views/HomeView.vue')
             },
             {
                 path: 'about',
                 name: 'About',
-                component: AboutView
+                // Lazy load AboutView component
+                component: () => import(/* webpackChunkName: "about" */ '@/views/AboutView.vue')
             },
             {
                 path: 'graphics',
                 name: 'Graphics',
-                component: GraphicsView
+                // Lazy load GraphicsView component
+                component: () => import(/* webpackChunkName: "graphics" */ '@/views/GraphicsView.vue')
             },
             {
                 path: '/case-study/rabbitry',
                 name: 'CaseStudyRabbitry',
-                component: CaseStudyRabbitry,
+                // Lazy load CaseStudyRabbitry component
+                component: () => import(/* webpackChunkName: "case-study-rabbitry" */ '@/views/CaseStudyRabbitry.vue'),
             },
             {
                 path: '/case-study/budgeting',
                 name: 'CaseStudyBudgeting',
-                component: CaseStudyBudgeting,
+                // Lazy load CaseStudyBudgeting component
+                component: () => import(/* webpackChunkName: "case-study-budgeting" */ '@/views/CaseStudyBudgeting.vue'),
             },
             {
                 path: '/case-study/vacation',
                 name: 'CaseStudyVacation',
-                component: CaseStudyVacation,
+                // Lazy load CaseStudyVacation component
+                component: () => import(/* webpackChunkName: "case-study-vacation" */ '@/views/CaseStudyVacation.vue'),
             },
             {
                 path: '/case-study/real-estate',
                 name: 'CaseStudyRealEstate',
-                component: CaseStudyRealEstate,
+                // Lazy load CaseStudyRealEstate component
+                component: () => import(/* webpackChunkName: "case-study-real-estate" */ '@/views/CaseStudyRealEstate.vue'),
             },
             {
                 path: '/case-study/medical',
                 name: 'CaseStudyMedical',
-                component: CaseStudyMedical,
+                // Lazy load CaseStudyMedical component
+                component: () => import(/* webpackChunkName: "case-study-medical" */ '@/views/CaseStudyMedical.vue'),
             },
             {
                 path: '/case-studies',
                 name: 'CaseStudies',
-                component: CaseStudyCards
+                // Lazy load CaseStudyCards component (assuming it's a view, not just a component used within other views)
+                component: () => import(/* webpackChunkName: "case-studies" */ '@/components/CaseStudyCards.vue')
             }
         ]
     }
