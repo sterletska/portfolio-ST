@@ -13,9 +13,9 @@
         @play="updatePlayButton"
         @pause="updatePlayButton"
       >
-        <source src="/portfolio-ST/UXDesignerAtWork.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        <source :src="`${process.env.BASE_URL}UXDesignerAtWork.mp4`" type="video/mp4" />
+    Your browser does not support the video tag.
+     </video>
 
       <!-- Always Visible Play/Pause Button -->
       <button
