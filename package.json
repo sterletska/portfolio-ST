@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://sterletska.github.io/portfolio-ST",
   "scripts": {
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "deploy": "gh-pages -d dist"
   },
